@@ -1,0 +1,12 @@
+.header {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.header__top-nav {
+  background-color: blue;
+}
+
+.header__bottom-nav {
+  background-color: red;
+}
