@@ -4,9 +4,9 @@
 }
 
 .header__top-nav {
-  background-color: blue;
+  background-color: rgb(var(--color-base-accent-2));
 }
 
 .header__bottom-nav {
-  background-color: red;
+  background-color: rgb(var(--color-base-accent-3));
 }

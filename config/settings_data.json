@@ -1,6 +1,13 @@
 {
   "current": "Default",
   "presets": {
-    "Default": { }
+    "Default": {
+      "colors_text": "#121212",
+      "colors_background_1": "#F5F5F5",
+      "colors_background_2": "#FFFFFF",
+      "colors_accent_1": "#EF2A82",
+      "colors_accent_2": "#0B57A2",
+      "colors_accent_3": "#172755"
+    }
   }
 }

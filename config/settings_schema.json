@@ -1,10 +1,52 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Themekit template theme",
+    "theme_name": "Take_2",
     "theme_version": "1.0.0",
     "theme_author": "Shopify",
     "theme_documentation_url": "https://github.com/Shopify/themekit",
     "theme_support_url": "https://github.com/Shopify/themekit/issues"
+  },
+  {
+    "name": "colors",
+    "settings": [
+      {
+        "type": "color",
+        "id": "colors_text",
+        "default": "#121212",
+        "label": "Text Color",
+        "info": "Used for text in body of page"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_1",
+        "default": "#FFFFFF",
+        "label": "Background 1"
+      },
+      {
+        "type": "color",
+        "id": "colors_background_2",
+        "default": "#F3F3F3",
+        "label": "Background 2"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_1",
+        "default": "#EF2A82",
+        "label": "Accent 1"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_2",
+        "default": "#0B57A2",
+        "label": "Accent 2"
+      },
+      {
+        "type": "color",
+        "id": "colors_accent_3",
+        "default": "#172755",
+        "label": "Accent 3"
+      }
+    ]
   }
 ]
