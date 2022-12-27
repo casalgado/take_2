@@ -48,5 +48,20 @@
         "label": "Accent 3"
       }
     ]
+  },
+  {
+    "name": "inputs",
+    "settings": [
+      {
+        "type": "range",
+        "id": "inputs_radius",
+        "min": 0,
+        "max": 40,
+        "step": 2,
+        "unit": "px",
+        "label": "Border Radius",
+        "default": 0
+      }
+    ]
   }
 ]

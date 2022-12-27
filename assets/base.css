@@ -1,3 +1,5 @@
+/* headings */
+
 h1,
 h2,
 h3,
@@ -12,4 +14,41 @@ h5,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
+}
+
+/* inputs */
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+.field {
+  box-shadow: var(--box-shadow-01);
+}
+
+.field__input {
+  background-color: rgb(var(--color-base-background-2));
+  border-radius: var(--inputs-radius);
+  border: none;
+  outline: none;
+}
+
+.field__button {
+  background-color: rgb(var(--color-base-accent-1));
+  border-radius: var(--inputs-radius);
+}
+
+.search__field {
+  display: flex;
+}
+
+.search__field > *:first-child {
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+}
+
+.search__field > *:last-child {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
 }

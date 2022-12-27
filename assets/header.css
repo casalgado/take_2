@@ -5,6 +5,7 @@
 
 .header__top-nav {
   background-color: rgb(var(--color-base-accent-2));
+  display: flex;
 }
 
 .header__bottom-nav {

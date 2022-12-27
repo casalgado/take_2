@@ -3,7 +3,21 @@
 <div class="header-wrapper">
   <header class="header">
     <div class="header__top-nav">
-      <div>LOGO</div>
+      <a href="/" itemprop="url">
+        <img
+          src="{{ "logo.svg" | asset_url }}"
+          alt="{{ shop.name }}"
+          itemprop="logo"
+        >
+      </a>
+      <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+        <div class="field search__field">
+          <input class="search__input field__input" type="search" placeholder="¿Que buscas?">
+          <button class="search__button field__button" aria-label="busqueda">
+            {%- render 'icon-search' -%}
+          </button>
+        </div>
+      </form>
       <div><a href="/cart">cart</a></div>
     </div>
     <div class="header__bottom-nav">
