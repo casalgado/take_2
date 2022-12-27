@@ -7,10 +7,11 @@
         <img
           src="{{ "logo.svg" | asset_url }}"
           alt="{{ shop.name }}"
+          id="header__logo"
           itemprop="logo"
         >
       </a>
-      <form action="{{ routes.search_url }}" method="get" role="search" class="search">
+      <form class="search__field--wrapper" action="{{ routes.search_url }}" method="get" role="search" class="search">
         <div class="field search__field">
           <input class="search__input field__input" type="search" placeholder="¿Que buscas?">
           <button class="search__button field__button" aria-label="busqueda">
@@ -19,8 +20,15 @@
         </div>
       </form>
       <div>{% render 'action-cta', icon: 'pin', heading: 'Todas', action_text: 'Seleccionar tienda' %}</div>
+
+      <div class="divider header__divider"></div>
       <div>{% render 'action-cta', icon: 'user', heading: 'Hola!', action_text: 'Ingresa a tu cuenta' %}</div>
-      <div><a href="/cart">cart</a></div>
+      <div class="divider header__divider"></div>
+      {%- render 'icon-heart' -%}
+      <div class="divider header__divider"></div>
+      <div>
+        <a href="/cart">{%- render 'icon-cart' -%}</a>
+      </div>
     </div>
     <div class="header__bottom-nav">
       <div class="header__bottom-nav__menu">

@@ -14,6 +14,7 @@ h5,
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
+  margin: 0px;
 }
 
 /* inputs */
@@ -52,4 +53,12 @@ button {
 .search__field > *:last-child {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+/* css components */
+
+.divider {
+  width: 0px;
+  min-height: 40px;
+  border-right: 1px solid #a6a6a6;
 }

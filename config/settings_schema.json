@@ -19,6 +19,13 @@
       },
       {
         "type": "color",
+        "id": "colors_text_light",
+        "default": "#FFFFFF",
+        "label": "Text Color",
+        "info": "Used for text in body of page"
+      },
+      {
+        "type": "color",
         "id": "colors_background_1",
         "default": "#FFFFFF",
         "label": "Background 1"
