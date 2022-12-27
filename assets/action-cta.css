@@ -1,0 +1,8 @@
+.cta-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.cta__action-text {
+  grid-column: span 2;
+}

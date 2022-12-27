@@ -1,0 +1,43 @@
+{% comment %}
+  Renders a Call to Action
+
+  Accepts:
+  - icon: {String} Name of icon, only possible values = [pin, user]
+  - heading: {String} Heading texn
+  - action_text: {String} Text describing Action
+
+  Usage:
+  {% render 'action-cta', icon: icon, heading: heading, action_text: action_text %}
+{% endcomment %}
+
+{{ 'action-cta.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign icon_path = 'icon-user'
+-%}
+<div class="cta-wrapper">
+  <div class="cta__icon">
+    {%- case icon -%}
+      {%- when 'pin' -%}
+        {%- render 'icon-pin' -%}
+      {%- when 'user' -%}
+        {%- render 'icon-user' -%}
+      {%- else -%}
+        {%- render 'icon-graylogo' -%}
+    {%- endcase -%}
+  </div>
+  <div class="cta__heading">
+    {%- if heading -%}
+      {{ heading }}
+    {%- else -%}
+      heading
+    {%- endif -%}
+  </div>
+  <div class="cta__action-text">
+    {%- if action_text -%}
+      {{ action_text }}
+    {%- else -%}
+      call to action text
+    {%- endif -%}
+  </div>
+</div>
