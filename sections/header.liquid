@@ -37,32 +37,36 @@
         <a href="/cart">{%- render 'icon-cart' -%}</a>
       </div>
     </div>
-    <div class="header__bottom-nav">
-      <div class="header__bottom-nav__menu">
-        {% for link in linklists['main-menu'].links %}
-          {% assign child_list_handle = link.title | handleize %}
-          {% if linklists[child_list_handle].links != blank %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
-            [
-            {%- for childlink in linklists[child_list_handle].links %}
-              <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
-            {% endfor -%}
-            ]
-          {% else %}
-            <a href="{{ link.url }}">{{ link.title }}</a>
+    <div class="header__bottom-nav--wrapper">
+      <div class="header__bottom-nav">
+        <div class="header__bottom-nav__menu menu-custom">
+          {% for link in linklists['main-menu'].links %}
+            {% assign child_list_handle = link.title | handleize %}
+            {% if linklists[child_list_handle].links != blank %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+              [
+              {%- for childlink in linklists[child_list_handle].links %}
+                <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+              {% endfor -%}
+              ]
+            {% else %}
+              <a href="{{ link.url }}">{{ link.title }}</a>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="header__bottom-nav__login menu-custom">
+          {% if shop.customer_accounts_enabled %}
+            {% if customer %}
+              <a href="/account">account</a>
+              {{ 'Sign Out' | customer_logout_link }}
+            {% else %}
+              {{ 'Sign in' | customer_login_link }}
+              <div class="header__nav-button-border">
+                {{ 'Sign Up' | customer_register_link }}
+              </div>
+            {% endif %}
           {% endif %}
-        {% endfor %}
-      </div>
-      <div class="header__bottom-nav__login">
-        {% if shop.customer_accounts_enabled %}
-          {% if customer %}
-            <a href="/account">account</a>
-            {{ 'log out' | customer_logout_link }}
-          {% else %}
-            {{ 'log in ' | customer_login_link }}
-            {{ 'register' | customer_register_link }}
-          {% endif %}
-        {% endif %}
+        </div>
       </div>
     </div>
   </header>

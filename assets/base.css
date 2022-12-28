@@ -17,6 +17,14 @@ h5,
   margin: 0px;
 }
 
+/* menus */
+
+.menu-custom {
+  font-family: var(--font-menu-family);
+  color: var(--color-menu-text);
+  font-size: var(--font-menu-size);
+}
+
 /* links */
 
 a,

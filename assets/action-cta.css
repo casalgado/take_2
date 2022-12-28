@@ -1,6 +1,7 @@
 .cta-wrapper {
   display: grid;
   grid-template-columns: min-content auto;
+  align-items: center;
   color: rgb(var(--color-base-text-light));
   height: 50px;
 }

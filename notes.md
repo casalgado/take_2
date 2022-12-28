@@ -3,6 +3,7 @@
 - why does ligth blue color have opacity in figma?
 - how is CurrentColor implemented in icon snippets?
 - what is the proper way to export icon assets from figma?
+- in what units are font sizes defined?
 
 # Possible Features
 
