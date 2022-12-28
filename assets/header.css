@@ -5,6 +5,8 @@
   background-color: rgb(var(--color-base-accent-2));
 }
 
+/* top nav */
+
 .header__top-nav {
   display: flex;
   align-items: center;
@@ -41,4 +43,10 @@
 .search__button {
   padding-left: 15px;
   padding-right: 15px;
+}
+
+/* bottom nav */
+
+.header__bottom-nav {
+  color: white;
 }

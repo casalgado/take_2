@@ -22,7 +22,14 @@
       <div>{% render 'action-cta', icon: 'pin', heading: 'Todas', action_text: 'Seleccionar tienda' %}</div>
 
       <div class="divider header__divider"></div>
-      <div>{% render 'action-cta', icon: 'user', heading: 'Hola!', action_text: 'Ingresa a tu cuenta' %}</div>
+      <div>
+        {%
+          render 'action-customer-cta',
+          heading: 'Hola!',
+          action_text_login: 'Ingresa a tu cuenta',
+          action_text_account: 'Ir a mi cuenta',
+        %}
+      </div>
       <div class="divider header__divider"></div>
       {%- render 'icon-heart' -%}
       <div class="divider header__divider"></div>

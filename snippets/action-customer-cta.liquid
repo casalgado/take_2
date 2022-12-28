@@ -1,0 +1,48 @@
+{% comment %}
+  Renders a Call to Action related to customer login / account features
+
+  Accepts:
+  - heading: {String} Heading text
+  - action_text_login: {String} Text describing login action
+  - action_text_account: {String} Text describing go to account action
+
+  Usage:
+  {% render 'action-customer-cta', heading: heading, action_text_login: action_text_login, action_text_account: action_text_account %}
+{% endcomment %}
+
+{{ 'action-cta.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign icon_path = 'icon-user'
+-%}
+<div class="cta-wrapper">
+  <div class="cta__icon">
+    {%- if customer -%}
+      {%- render 'icon-user-initials', first: 'C', last: 'S' -%}
+    {%- else -%}
+      {%- render 'icon-user' -%}
+    {%- endif -%}
+  </div>
+  <h3 class="cta__heading">
+    {%- if customer -%}
+      {{ customer.first_name }}
+    {%- else -%}
+      {%- if heading -%}
+        {{ heading }}
+      {%- else -%}
+        heading
+      {%- endif -%}
+    {%- endif -%}
+  </h3>
+  <div class="cta__action-text">
+    {%- if customer -%}
+      <a href="/account/login">
+        {{ action_text_login }}
+      </a>
+    {%- else -%}
+      <a href="/account">
+        {{ action_text_account }}
+      </a>
+    {%- endif -%}
+  </div>
+</div>

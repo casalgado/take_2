@@ -5,16 +5,14 @@
   - icon: {String} Name of icon, only possible values = [pin, user]
   - heading: {String} Heading texn
   - action_text: {String} Text describing Action
+  - link_url: {String} URL destination when action_text is clicked
 
   Usage:
-  {% render 'action-cta', icon: icon, heading: heading, action_text: action_text %}
+  {% render 'action-cta', icon: icon, heading: heading, action_text: action_text, link_url: link_url %}
 {% endcomment %}
 
 {{ 'action-cta.css' | asset_url | stylesheet_tag }}
 
-{%- liquid
-  assign icon_path = 'icon-user'
--%}
 <div class="cta-wrapper">
   <div class="cta__icon">
     {%- case icon -%}
@@ -32,10 +30,12 @@
     {%- else -%}
       heading
     {%- endif -%}
-  </h2>
+  </h3>
   <div class="cta__action-text">
     {%- if action_text -%}
-      {{ action_text }}
+      <a href="{{link_url}}">
+        {{ action_text }}
+      </a>
     {%- else -%}
       call to action text
     {%- endif -%}

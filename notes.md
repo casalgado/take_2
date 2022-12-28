@@ -11,3 +11,8 @@
 # Possible Code Improvements
 
 - Accessibility Evaluation
+
+# To Do
+
+- Menu Fonts
+- Placeholder text styles

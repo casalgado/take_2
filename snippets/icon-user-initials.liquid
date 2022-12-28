@@ -1,0 +1,25 @@
+{% comment %}
+  Renders a icon with user initials
+
+  Accepts:
+  - first: {String} Frist letter of first name
+  - last: {String} Frist letter of last name
+{% endcomment %}
+
+{% style %}
+  .icon-user-initals {
+    width: 24px;
+    height: 24px;
+    background-color: rgb(var(--color-base-accent-1));
+    font-size: 14px;
+    line-height: 24px;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 8px;
+  }
+{% endstyle %}
+
+<div class="icon-user-initals">
+  {{- first -}}
+  {{- last -}}
+</div>

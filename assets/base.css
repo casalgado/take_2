@@ -17,6 +17,16 @@ h5,
   margin: 0px;
 }
 
+/* links */
+
+a,
+a:visited,
+a:hover,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* inputs */
 
 button {
