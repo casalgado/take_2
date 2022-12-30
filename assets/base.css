@@ -1,3 +1,10 @@
+/* sections */
+
+section {
+  width: var(--page-width);
+  margin: 0 auto;
+}
+
 /* headings */
 
 h1,

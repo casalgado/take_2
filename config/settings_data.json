@@ -9,7 +9,8 @@
       "colors_accent_1": "#EF2A82",
       "colors_accent_2": "#0B57A2",
       "colors_accent_3": "#172755",
-      "inputs_radius": 8
+      "inputs_radius": 8,
+      "page_width": 1350
     }
   }
 }

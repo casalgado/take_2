@@ -13,7 +13,7 @@
   margin-top: 48px;
   margin-bottom: 22px;
   height: 50px;
-  width: var(--page-width);
+  width: var(--nav-width);
   gap: 20px;
 }
 
@@ -62,7 +62,7 @@
 
 .header__bottom-nav {
   margin: 0 auto;
-  width: var(--page-width);
+  width: var(--nav-width);
   display: grid;
   grid-template-columns: 1fr 1fr;
   align-items: center;

@@ -1,0 +1,32 @@
+.custom-slider {
+  padding: 0px;
+  list-style-type: none;
+  display: flex;
+  overflow-x: auto;
+  flex: none;
+  width: 100%;
+  gap: 25px;
+  flex-flow: row nowrap;
+  scroll-snap-type: x mandatory;
+}
+
+.custom-slider > li {
+  scroll-snap-align: start;
+  flex: none;
+  height: 250px;
+  background-color: #87ea87;
+  border: 1px solid red;
+}
+
+.custom-slider {
+  scrollbar-color: rgb(var(--color-foreground))
+    rgba(var(--color-foreground), 0.04);
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.custom-slider::-webkit-scrollbar {
+  height: 0.4rem;
+  width: 0.4rem;
+  display: none;
+}

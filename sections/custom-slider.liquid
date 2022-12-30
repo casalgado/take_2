@@ -1,0 +1,91 @@
+{{ 'custom-slider.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <slider-component class="">
+    <h1>
+      {{ section.settings.title }}
+    </h1>
+    <div class="custom-slider--container">
+      {%- liquid
+        assign columns = 4.0
+        assign padding = 25
+        assign total_padding = columns | minus: 1 | times: padding
+        assign relative_width = 1 | divided_by: columns
+        assign page_width = settings.page_width
+        assign aspect_ratio = 0.65
+      -%}
+      {%- style -%}
+        .custom-slider {
+          gap: {{padding}}px;
+        }
+
+        .custom-slider li {
+          width: {{ page_width | minus: total_padding | times: relative_width }}px;
+          height: {{ page_width | minus: total_padding | times: relative_width | times: aspect_ratio }}px;
+        }
+      {%- endstyle -%}
+      <ul
+        class="custom-slider"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- for block in section.blocks -%}
+          <style></style>
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="slider__slide"
+            {{ block.shopify_attributes }}
+          >
+            H
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </slider-component>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Slider",
+  "tag": "section",
+  "class": "section section-collection-list",
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Categorias para ti",
+      "label": "t:sections.collection-list.settings.title.label"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "featured_collection",
+      "name": "t:sections.collection-list.blocks.featured_collection.name",
+      "settings": [
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collection Slider",
+      "blocks": [
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        },
+        {
+          "type": "featured_collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

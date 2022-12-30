@@ -15,5 +15,4 @@
 
 # To Do
 
-- Menu Fonts
-- Placeholder text styles
+-
