@@ -1,11 +1,29 @@
-{{ 'custom-slider.css' | asset_url | stylesheet_tag }}
+{{ 'collection-slider.css' | asset_url | stylesheet_tag }}
 
 <section>
   <slider-component class="">
     <h1>
       {{ section.settings.title }}
     </h1>
-    <div class="custom-slider--container">
+    <div class="collection-slider--container">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'general.slider.previous_slide' | t }}"
+      >
+        {% render 'icon-caret' %}
+      </button>
+
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'general.slider.next_slide' | t }}"
+      >
+        {% render 'icon-caret' %}
+      </button>
+
       {%- liquid
         assign columns = 4.0
         assign padding = 25
