@@ -11,6 +11,7 @@
         class="slider-button slider-button--prev"
         name="previous"
         aria-label="{{ 'general.slider.previous_slide' | t }}"
+        data-step="{{section.settings.step}}"
       >
         {% render 'icon-caret' %}
       </button>
@@ -20,6 +21,7 @@
         class="slider-button slider-button--next"
         name="next"
         aria-label="{{ 'general.slider.next_slide' | t }}"
+        data-step="{{section.settings.step}}"
       >
         {% render 'icon-caret' %}
       </button>
@@ -54,7 +56,7 @@
             class="slider__slide"
             {{ block.shopify_attributes }}
           >
-            H
+            {{ forloop.index }}
           </li>
         {%- endfor -%}
       </ul>
@@ -74,6 +76,15 @@
       "id": "title",
       "default": "Categorias para ti",
       "label": "t:sections.collection-list.settings.title.label"
+    },
+    {
+      "type": "range",
+      "id": "step",
+      "min": 1,
+      "max": 4,
+      "step": 1,
+      "default": 2,
+      "label": "Scroll Step"
     }
   ],
   "blocks": [
