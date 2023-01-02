@@ -17,3 +17,10 @@
   font-size: 75%;
   align-self: end;
 }
+
+@media (max-width: 1200px) {
+  .cta__heading,
+  .cta__action-text {
+    display: none;
+  }
+}
