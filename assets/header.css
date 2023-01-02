@@ -108,7 +108,7 @@
   }
 }
 
-/* for small screens */
+/* for medium screens */
 @media (max-width: 1200px) {
   .header__logo--wrapper {
     position: absolute;
@@ -161,5 +161,21 @@
 
   .divider {
     display: none;
+  }
+}
+
+/* for small screens */
+@media (max-width: 750px) {
+  #header__logo {
+    width: 120px;
+  }
+
+  .header__top-nav {
+    width: 92%;
+    gap: 10px;
+  }
+
+  .search__field--bottom {
+    width: 92%;
   }
 }
