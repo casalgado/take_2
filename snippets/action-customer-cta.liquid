@@ -5,6 +5,7 @@
   - heading: {String} Heading text
   - action_text_login: {String} Text describing login action
   - action_text_account: {String} Text describing go to account action
+  - cta_class: {String} Adds a class to the cta element (optional)
 
   Usage:
   {% render 'action-customer-cta', heading: heading, action_text_login: action_text_login, action_text_account: action_text_account %}
@@ -15,14 +16,17 @@
 {%- liquid
   assign icon_path = 'icon-user'
 -%}
-<div class="cta-wrapper">
-  <div class="cta__icon">
-    {%- if customer -%}
+<div class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}">
+  {%- if customer -%}
+    <a class="cta__icon" href="/account">
       {%- render 'icon-user-initials', first: 'C', last: 'S' -%}
-    {%- else -%}
+    </a>
+  {%- else -%}
+    <a class="cta__icon" href="/account/login">
       {%- render 'icon-user' -%}
-    {%- endif -%}
-  </div>
+    </a>
+  {%- endif -%}
+
   <h3 class="cta__heading">
     {%- if customer -%}
       {{ customer.first_name }}
@@ -36,11 +40,11 @@
   </h3>
   <div class="cta__action-text">
     {%- if customer -%}
-      <a href="/account/login">
+      <a href="/account">
         {{ action_text_login }}
       </a>
     {%- else -%}
-      <a href="/account">
+      <a href="/account/login">
         {{ action_text_account }}
       </a>
     {%- endif -%}

@@ -13,8 +13,8 @@
 
 {{ 'action-cta.css' | asset_url | stylesheet_tag }}
 
-<div class="cta-wrapper">
-  <div class="cta__icon">
+<div class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}">
+  <a class="cta__icon" href="{{link_url}}">
     {%- case icon -%}
       {%- when 'pin' -%}
         {%- render 'icon-pin' -%}
@@ -23,7 +23,7 @@
       {%- else -%}
         {%- render 'icon-graylogo' -%}
     {%- endcase -%}
-  </div>
+  </a>
   <h3 class="cta__heading">
     {%- if heading -%}
       {{ heading }}
