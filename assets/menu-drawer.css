@@ -1,0 +1,67 @@
+/* drawer styles */
+menu-drawer {
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: rgb(var(--color-base-background-2));
+  color: rgb(var(--color-base-text));
+  z-index: 10;
+  transition: width 0.2s ease-in;
+  overflow: hidden;
+}
+
+.menu-drawer__button {
+  cursor: pointer;
+  display: none;
+  color: white;
+  width: 30px;
+}
+
+.drawer__logo--wrapper {
+  align-self: center;
+  margin-bottom: 15px;
+}
+
+menu-drawer .menu-drawer__button {
+  color: inherit;
+  width: 14px;
+  position: absolute;
+  top: 12px;
+  left: 15px;
+}
+
+.menu-drawer__content {
+  padding: 50px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.menu-drawer--open {
+  width: 40%;
+}
+
+.menu-drawer--close {
+  width: 0%;
+}
+
+/* for large screens */
+@media (min-width: 1200px) {
+  menu-drawer {
+    width: 0% !important;
+  }
+}
+
+/* for medium screens */
+@media (max-width: 1200px) {
+  .menu-drawer__button {
+    display: block;
+  }
+}
+
+/* for small screens */
+@media (max-width: 750px) {
+  .menu-drawer--open {
+    width: 80%;
+  }
+}

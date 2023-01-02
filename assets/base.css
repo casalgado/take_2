@@ -87,3 +87,8 @@ button {
   min-height: 40px;
   border-right: 1px solid #a6a6a6;
 }
+
+.divider--horizontal {
+  height: 0px;
+  border-bottom: 1px solid #a6a6a6;
+}
