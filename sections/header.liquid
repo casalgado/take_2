@@ -1,5 +1,14 @@
 {{ 'header.css' | asset_url | stylesheet_tag }}
 
+<script src="{{ 'menu-drawer.js' | asset_url }}" defer="defer"></script>
+
+<menu-drawer>
+  <div id="menu-drawer"></div>
+  <div class="menu-drawer__button" data-action="close">
+    {% render 'icon-close' %}
+  </div>
+</menu-drawer>
+
 <div class="header-wrapper">
   <header class="header">
     <div class="header__top-nav">
@@ -11,6 +20,9 @@
           itemprop="logo"
         >
       </a>
+      <div class="menu-drawer__button" data-action="open">
+        {% render 'icon-hamburger' %}
+      </div>
       <form
         class="search__field--wrapper search__field--top"
         action="{{ routes.search_url }}"

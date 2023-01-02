@@ -107,7 +107,6 @@ class SliderComponent extends HTMLElement {
     this.slider.scrollTo({
       left: this.slideScrollPosition,
     });
-    console.log(step);
   }
 }
 
