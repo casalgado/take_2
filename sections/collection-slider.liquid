@@ -6,6 +6,17 @@
       {{ section.settings.title }}
     </h1>
     <div class="collection-slider--container">
+      {%- liquid
+        assign columns = 4.0
+        assign padding = 25
+        assign total_padding = columns | minus: 1 | times: padding
+        assign relative_width = 1 | divided_by: columns
+        assign page_width = settings.page_width
+        assign aspect_ratio = 0.65
+      -%}
+      {%- style -%}
+      {%- endstyle -%}
+
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -26,31 +37,12 @@
         {% render 'icon-caret' %}
       </button>
 
-      {%- liquid
-        assign columns = 4.0
-        assign padding = 25
-        assign total_padding = columns | minus: 1 | times: padding
-        assign relative_width = 1 | divided_by: columns
-        assign page_width = settings.page_width
-        assign aspect_ratio = 0.65
-      -%}
-      {%- style -%}
-        .custom-slider {
-          gap: {{padding}}px;
-        }
-
-        .custom-slider li {
-          width: {{ page_width | minus: total_padding | times: relative_width }}px;
-          height: {{ page_width | minus: total_padding | times: relative_width | times: aspect_ratio }}px;
-        }
-      {%- endstyle -%}
       <ul
         class="custom-slider"
         id="Slider-{{ section.id }}"
         role="list"
       >
         {%- for block in section.blocks -%}
-          <style></style>
           <li
             id="Slide-{{ section.id }}-{{ forloop.index }}"
             class="slider__slide"
@@ -83,7 +75,7 @@
       "min": 1,
       "max": 4,
       "step": 1,
-      "default": 2,
+      "default": 1,
       "label": "Scroll Step"
     }
   ],
