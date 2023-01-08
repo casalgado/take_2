@@ -16,15 +16,15 @@
 {%- liquid
   assign icon_path = 'icon-user'
 -%}
-<div class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}">
+<a class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}" href="/account">
   {%- if customer -%}
-    <a class="cta__icon" href="/account">
+    <div class="cta__icon">
       {%- render 'icon-user-initials', first: 'C', last: 'S' -%}
-    </a>
+    </div>
   {%- else -%}
-    <a class="cta__icon" href="/account/login">
+    <div class="cta__icon">
       {%- render 'icon-user' -%}
-    </a>
+    </div>
   {%- endif -%}
 
   <h3 class="cta__heading">
@@ -40,13 +40,9 @@
   </h3>
   <div class="cta__action-text">
     {%- if customer -%}
-      <a href="/account">
-        {{ action_text_login }}
-      </a>
+      {{ action_text_login }}
     {%- else -%}
-      <a href="/account/login">
-        {{ action_text_account }}
-      </a>
+      {{ action_text_account }}
     {%- endif -%}
   </div>
-</div>
+</a>

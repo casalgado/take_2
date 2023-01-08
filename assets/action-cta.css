@@ -6,6 +6,14 @@
   height: 50px;
 }
 
+.cta-wrapper:visited {
+  color: rgb(var(--color-base-text-light));
+}
+
+.cta-wrapper:hover .cta__action-text {
+  text-decoration: underline;
+}
+
 .cta__heading {
   font-weight: 400;
   margin-left: 8px;
@@ -18,9 +26,16 @@
   align-self: end;
 }
 
-@media (max-width: 1200px) {
-  .cta__heading,
+@media (max-width: 768px) {
+  .cta__heading {
+    font-size: 14px;
+  }
+
   .cta__action-text {
     display: none;
+  }
+
+  .cta__icon svg {
+    width: 16px;
   }
 }

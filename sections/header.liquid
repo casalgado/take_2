@@ -47,6 +47,9 @@
 <div class="header-wrapper">
   <header class="header">
     <div class="header__top-nav">
+      <div class="menu-drawer__button" data-action="open">
+        {% render 'icon-hamburger' %}
+      </div>
       <a href="/" itemprop="url" class="header__logo--wrapper">
         <img
           src="{{ "logo.svg" | asset_url }}"
@@ -55,9 +58,6 @@
           itemprop="logo"
         >
       </a>
-      <div class="menu-drawer__button" data-action="open">
-        {% render 'icon-hamburger' %}
-      </div>
       <form
         class="search__field--wrapper search__field--top"
         action="{{ routes.search_url }}"

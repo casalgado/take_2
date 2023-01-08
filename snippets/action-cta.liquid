@@ -3,7 +3,7 @@
 
   Accepts:
   - icon: {String} Name of icon, only possible values = [pin, user]
-  - heading: {String} Heading texn
+  - heading: {String} Heading text
   - action_text: {String} Text describing Action
   - link_url: {String} URL destination when action_text is clicked
 
@@ -13,8 +13,8 @@
 
 {{ 'action-cta.css' | asset_url | stylesheet_tag }}
 
-<div class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}">
-  <a class="cta__icon" href="{{link_url}}">
+<a class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}" href="{{link_url}}">
+  <div class="cta__icon">
     {%- case icon -%}
       {%- when 'pin' -%}
         {%- render 'icon-pin' -%}
@@ -23,7 +23,7 @@
       {%- else -%}
         {%- render 'icon-graylogo' -%}
     {%- endcase -%}
-  </a>
+  </div>
   <h3 class="cta__heading">
     {%- if heading -%}
       {{ heading }}
@@ -33,11 +33,9 @@
   </h3>
   <div class="cta__action-text">
     {%- if action_text -%}
-      <a href="{{link_url}}">
-        {{ action_text }}
-      </a>
+      {{ action_text }}
     {%- else -%}
       call to action text
     {%- endif -%}
   </div>
-</div>
+</a>

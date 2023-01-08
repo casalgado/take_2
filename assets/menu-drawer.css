@@ -45,23 +45,20 @@ menu-drawer .menu-drawer__button {
   width: 0%;
 }
 
-/* for large screens */
-@media (min-width: 1200px) {
+/* for medium+ screens */
+@media (min-width: 768px) {
   menu-drawer {
     width: 0% !important;
   }
 }
 
-/* for medium screens */
-@media (max-width: 1200px) {
-  .menu-drawer__button {
-    display: block;
-  }
-}
-
 /* for small screens */
-@media (max-width: 750px) {
+@media (max-width: 768px) {
   .menu-drawer--open {
     width: 80%;
+  }
+
+  .menu-drawer__button {
+    display: block;
   }
 }
