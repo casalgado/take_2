@@ -28,8 +28,11 @@
       {% endif %}
       class="card__inner"
     >
-      <div class="card__media">
-        <div class="media ratio" style="--ratio-percent: {{ ratio | times: 100 }}%;">
+      <div>
+        <div
+          class="card--collection__media card--collection__ratio"
+          style="--ratio-percent: {{ ratio | times: 100 }}%;"
+        >
           <img
             src="  {%- if card_collection.featured_image -%}{{ card_collection.featured_image | image_url }} {%- else -%} {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
             loading="lazy"

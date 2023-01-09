@@ -22,3 +22,22 @@
 .card--collection__icon svg {
   width: 20px;
 }
+
+/* images */
+
+.card--collection__media {
+  position: relative;
+}
+
+.card--collection__ratio {
+  overflow: hidden;
+  height: 0px;
+  padding-bottom: var(--ratio-percent);
+}
+
+.card--collection__media img {
+  width: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}

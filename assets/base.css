@@ -83,25 +83,6 @@ button {
   border-bottom-left-radius: 0px;
 }
 
-/* images */
-
-.media {
-  position: relative;
-}
-
-.ratio {
-  overflow: hidden;
-  height: 0px;
-  padding-bottom: var(--ratio-percent);
-}
-
-.media img {
-  width: 100%;
-  position: absolute;
-  transform: translateY(-50%);
-  top: 50%;
-}
-
 /* css components */
 
 .divider {

@@ -1,4 +1,4 @@
-{{ 'collection-slider.css' | asset_url | stylesheet_tag }}
+{{ 'slider-collection.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
@@ -7,17 +7,6 @@
       {{ section.settings.title }}
     </h1>
     <div class="collection-slider--container">
-      {%- liquid
-        assign columns = 4.0
-        assign padding = 25
-        assign total_padding = columns | minus: 1 | times: padding
-        assign relative_width = 1 | divided_by: columns
-        assign page_width = settings.page_width
-        assign aspect_ratio = 0.65
-      -%}
-      {%- style -%}
-      {%- endstyle -%}
-
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -39,7 +28,7 @@
       </button>
 
       <ul
-        class="custom-slider"
+        class="collection-slider"
         id="Slider-{{ section.id }}"
         role="list"
       >

@@ -1,33 +1,46 @@
-:root {
-  --custom-slider-li-padding: 25px;
-  --custom-slider-card-aspect-ratio: 0.65;
-}
-
-.custom-slider {
+.spotlight-slider {
   padding: 0px;
   list-style-type: none;
   display: flex;
   overflow-x: auto;
-  gap: var(--custom-slider-li-padding);
   flex-flow: row nowrap;
   scroll-snap-type: x mandatory;
   scroll-behavior: smooth;
+  border-radius: 8px;
+  overflow: hidden;
 }
 
-.custom-slider > li {
-  width: calc((100% - 3 * var(--custom-slider-li-padding)) / 4);
+.spotlight-slider > li {
+  width: calc(100%);
   scroll-snap-align: start;
   flex: none;
 }
 
-.custom-slider {
+/* padding bottom here can be extracted to a ratio variable */
+
+.spotlight-slider__media {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  padding-bottom: 72%;
+}
+
+.spotlight-slider__media > img {
+  position: absolute;
+  height: 100%;
+  display: block;
+}
+
+/* scrollbar styles */
+
+.spotlight-slider {
   scrollbar-color: rgb(var(--color-base-text))
     rgba(var(--color-base-text), 0.04);
   -ms-overflow-style: none;
   scrollbar-width: none;
 }
 
-.custom-slider::-webkit-scrollbar {
+.spotlight-slider::-webkit-scrollbar {
   height: 0.4rem;
   width: 0.4rem;
   display: none;
@@ -75,7 +88,7 @@
 
 /* layout */
 
-.collection-slider--container {
+.spotlight-slider--container {
   position: relative;
 }
 
@@ -94,10 +107,6 @@
 }
 
 @media (max-width: 768px) {
-  .custom-slider > li {
-    width: calc((100% - 1 * var(--custom-slider-li-padding)) / 2);
-  }
-
   .slider-button {
     width: 30px;
     height: 30px;
