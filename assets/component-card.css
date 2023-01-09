@@ -1,0 +1,24 @@
+.card {
+  border-radius: 8px;
+  background-color: rgb(var(--color-base-background-2));
+  box-shadow: var(--box-shadow-01);
+  overflow: hidden;
+  border: 1px solid #d8d8d8;
+}
+
+.card--collection > .card__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.card--collection > .card__inner > .card__content {
+  display: flex;
+  justify-content: space-between;
+  padding: 12px;
+  align-items: center;
+  height: 52px;
+}
+
+.card--collection__icon svg {
+  width: 20px;
+}

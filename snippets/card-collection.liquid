@@ -1,0 +1,52 @@
+{% comment %}
+  Renders a collection card
+
+  Accepts:
+  - card_collection: {Object} Collection Liquid object
+  - wrapper_class: {String} Wrapper class for card (optional)
+
+  Usage:
+  {% render 'card-collection' %}
+{% endcomment %}
+
+{%- liquid
+  assign ratio = 0.48
+-%}
+
+<div class="card-wrapper collection-card-wrapper {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% endif %}">
+  <div
+    class="
+      card
+      card--collection
+    "
+  >
+    <a
+      {% if card_collection == blank %}
+        role="link" aria-disabled="true"
+      {% else %}
+        href="{{ card_collection.url }}"
+      {% endif %}
+      class="card__inner"
+    >
+      <div class="card__media">
+        <div class="media ratio" style="--ratio-percent: {{ ratio | times: 100 }}%;">
+          <img
+            src="  {%- if card_collection.featured_image -%}{{ card_collection.featured_image | image_url }} {%- else -%} {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
+            loading="lazy"
+          >
+        </div>
+      </div>
+
+      <div class="card__content">
+        <h3 class="card__heading">
+          {%- if card_collection.title != blank -%}
+            {{- card_collection.title | escape -}}
+          {%- else -%}
+            {{ 'onboarding.collection_title' | t }}
+          {%- endif -%}
+        </h3>
+        <div class="card--collection__icon">{% render 'icon-arrow' %}</div>
+      </div>
+    </a>
+  </div>
+</div>

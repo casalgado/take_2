@@ -1,8 +1,11 @@
 /* sections */
 
 section {
-  width: var(--page-width);
+  width: 100%;
+  max-width: var(--page-width);
   margin: 0 auto;
+  padding-right: 15px;
+  padding-left: 15px;
 }
 
 /* headings */
@@ -78,6 +81,25 @@ button {
 .search__field > *:last-child {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+/* images */
+
+.media {
+  position: relative;
+}
+
+.ratio {
+  overflow: hidden;
+  height: 0px;
+  padding-bottom: var(--ratio-percent);
+}
+
+.media img {
+  width: 100%;
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
 }
 
 /* css components */

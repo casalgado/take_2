@@ -15,4 +15,5 @@
 
 # To Do
 
--
+- favicon
+- heading font weight and size styles

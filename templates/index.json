@@ -1,4 +1,7 @@
 {
-  "sections": {},
-  "order": []
+  "sections": {
+    "collection_slider": {
+      "type": "collection-slider"
+    }
+  }
 }

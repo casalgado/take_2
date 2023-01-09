@@ -1,4 +1,5 @@
 {{ 'collection-slider.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
   <slider-component class="">
@@ -48,7 +49,7 @@
             class="slider__slide"
             {{ block.shopify_attributes }}
           >
-            {{ forloop.index }}
+            {% render 'card-collection', card_collection: block.settings.collection %}
           </li>
         {%- endfor -%}
       </ul>
@@ -96,6 +97,9 @@
     {
       "name": "Collection Slider",
       "blocks": [
+        {
+          "type": "featured_collection"
+        },
         {
           "type": "featured_collection"
         },
