@@ -42,10 +42,26 @@
             >
               <div class="spotlight-slider__media">
                 <img
-                  src="{%- if block.settings.image -%}{{ block.settings.image | image_url }} {%- else -%}  {{ 'lifestyle-2' | placeholder_svg_tag: 'placeholder-svg' }} {%- endif -%}"
-                  loading="lazy"
+                  src="{%- if block.settings.image -%}{{ block.settings.image | image_url }} {%- else -%}  {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
                 >
               </div>
+            </li>
+          {%- endfor -%}
+        </ul>
+
+        <ul
+          class="slider-pagination"
+        >
+          {%- for block in slide-blocks -%}
+            <li>
+              <button
+                id="slider-pagination__button--index{{ forloop.index0 }}"
+                class="slider-pagination__button"
+                type="button"
+                aria-current="true"
+                aria-controls=""
+                aria-label="Showing Slide {{ forloop.index }}"
+              ></button>
             </li>
           {%- endfor -%}
         </ul>

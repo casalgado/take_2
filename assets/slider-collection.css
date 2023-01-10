@@ -4,7 +4,7 @@
 
 .collection-slider {
   padding: 0px;
-  list-style-type: none;
+
   display: flex;
   overflow-x: auto;
   gap: var(--collection-slider-li-padding);

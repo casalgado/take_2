@@ -95,3 +95,9 @@ button {
   height: 0px;
   border-bottom: 1px solid #a6a6a6;
 }
+
+/* lists */
+
+ul {
+  list-style-type: none;
+}

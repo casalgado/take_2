@@ -3,11 +3,13 @@ class SliderComponent extends HTMLElement {
     super();
     this.slider = this.querySelector('[id^="Slider-"]');
     this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
-    this.enableSliderLooping = false;
-    this.currentPageElement = this.querySelector(".slider-counter--current");
-    this.pageTotalElement = this.querySelector(".slider-counter--total");
+
     this.prevButton = this.querySelector('button[name="previous"]');
     this.nextButton = this.querySelector('button[name="next"]');
+
+    this.paginationButtons = this.querySelectorAll(
+      ".slider-pagination__button"
+    );
 
     if (!this.slider || !this.nextButton) return;
 
@@ -33,40 +35,17 @@ class SliderComponent extends HTMLElement {
         this.sliderItemOffset
     );
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
-    this.update();
-  }
 
-  resetPages() {
-    this.sliderItems = this.querySelectorAll('[id^="Slide-"]');
-    this.initPages();
+    if (this.paginationButtons.length > 0)
+      this.paginationButtons[0].classList.add("is-active");
+
+    this.update();
   }
 
   update() {
     // Temporarily prevents unneeded updates resulting from variant changes
     // This should be refactored as part of https://github.com/Shopify/dawn/issues/2057
     if (!this.slider || !this.nextButton) return;
-
-    const previousPage = this.currentPage;
-    this.currentPage =
-      Math.round(this.slider.scrollLeft / this.sliderItemOffset) + 1;
-
-    if (this.currentPageElement && this.pageTotalElement) {
-      this.currentPageElement.textContent = this.currentPage;
-      this.pageTotalElement.textContent = this.totalPages;
-    }
-
-    if (this.currentPage != previousPage) {
-      this.dispatchEvent(
-        new CustomEvent("slideChanged", {
-          detail: {
-            currentPage: this.currentPage,
-            currentElement: this.sliderItemsToShow[this.currentPage - 1],
-          },
-        })
-      );
-    }
-
-    if (this.enableSliderLooping) return;
 
     if (
       this.isSlideVisible(this.sliderItemsToShow[0]) &&
@@ -91,7 +70,6 @@ class SliderComponent extends HTMLElement {
   isSlideVisible(element, offset = 0) {
     const lastVisibleSlide =
       this.slider.clientWidth + this.slider.scrollLeft - offset + 1;
-    console.log(lastVisibleSlide);
     return (
       element.offsetLeft + element.clientWidth <= lastVisibleSlide &&
       element.offsetLeft >= this.slider.scrollLeft
@@ -100,6 +78,7 @@ class SliderComponent extends HTMLElement {
 
   onButtonClick(event) {
     event.preventDefault();
+    const numberOfItems = this.sliderItems.length;
     const step = event.currentTarget.dataset.step || 1;
     this.slideScrollPosition =
       event.currentTarget.name === "next"
@@ -108,6 +87,25 @@ class SliderComponent extends HTMLElement {
     this.slider.scrollTo({
       left: this.slideScrollPosition,
     });
+
+    // set active pagination buttons
+    let activePaginationButton = 0;
+    for (let i = 0; i < numberOfItems; i++) {
+      if (this.slideScrollPosition <= this.sliderItemOffset * i) {
+        activePaginationButton = i;
+        break;
+      }
+    }
+    if (this.paginationButtons.length > 0) {
+      for (let i = 0; i < this.paginationButtons.length; i++) {
+        const paginationButton = this.paginationButtons[i];
+        if (activePaginationButton == i) {
+          paginationButton.classList.add("is-active");
+        } else {
+          paginationButton.classList.remove("is-active");
+        }
+      }
+    }
   }
 }
 
