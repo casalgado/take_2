@@ -1,5 +1,5 @@
 {{ 'snippet-spotlight-card.css' | asset_url | stylesheet_tag }}
-{{ 'slider-spotlight.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'spotlight.css' | asset_url | stylesheet_tag }}
 
 {% assign slide-blocks = section.blocks | where: 'type', 'slide' %}
@@ -8,7 +8,7 @@
 <section>
   <div class="spotlight__wrapper">
     <slider-component class="">
-      <div class="spotlight-slider--container">
+      <div class="slider-component--container">
         <button
           type="button"
           class="slider-button slider-button--prev"
@@ -30,7 +30,7 @@
         </button>
 
         <ul
-          class="spotlight-slider"
+          class="slider-component spotlight-slider"
           id="Slider-{{ section.id }}"
           role="list"
         >

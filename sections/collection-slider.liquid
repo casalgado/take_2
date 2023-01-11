@@ -1,4 +1,4 @@
-{{ 'slider-collection.css' | asset_url | stylesheet_tag }}
+{{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 <section>
@@ -6,7 +6,7 @@
     <h1>
       {{ section.settings.title }}
     </h1>
-    <div class="collection-slider--container">
+    <div class="slider-component--container">
       <button
         type="button"
         class="slider-button slider-button--prev"
@@ -28,7 +28,7 @@
       </button>
 
       <ul
-        class="collection-slider"
+        class="slider-component collection-slider"
         id="Slider-{{ section.id }}"
         role="list"
       >
