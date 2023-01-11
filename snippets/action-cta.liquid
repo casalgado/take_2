@@ -14,23 +14,25 @@
 {{ 'action-cta.css' | asset_url | stylesheet_tag }}
 
 <a class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}" href="{{link_url}}">
-  <div class="cta__icon">
-    {%- case icon -%}
-      {%- when 'pin' -%}
-        {%- render 'icon-pin' -%}
-      {%- when 'user' -%}
-        {%- render 'icon-user' -%}
+  <div class="cta__icon cta__icon--action-cta">
+    <span>
+      {%- case icon -%}
+        {%- when 'pin' -%}
+          {%- render 'icon-pin' -%}
+        {%- when 'user' -%}
+          {%- render 'icon-user' -%}
+        {%- else -%}
+          {%- render 'icon-graylogo' -%}
+      {%- endcase -%}
+    </span>
+    <h3 class="cta__heading cta__heading--action-cta">
+      {%- if heading -%}
+        {{ heading }}
       {%- else -%}
-        {%- render 'icon-graylogo' -%}
-    {%- endcase -%}
+        heading
+      {%- endif -%}
+    </h3>
   </div>
-  <h3 class="cta__heading">
-    {%- if heading -%}
-      {{ heading }}
-    {%- else -%}
-      heading
-    {%- endif -%}
-  </h3>
   <div class="cta__action-text">
     {%- if action_text -%}
       {{ action_text }}

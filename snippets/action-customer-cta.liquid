@@ -17,27 +17,29 @@
   assign icon_path = 'icon-user'
 -%}
 <a class="cta-wrapper {%- if cta_class %} {{ cta_class }}{% endif -%}" href="/account">
-  {%- if customer -%}
-    <div class="cta__icon">
-      {%- render 'icon-user-initials', first: 'C', last: 'S' -%}
-    </div>
-  {%- else -%}
-    <div class="cta__icon">
-      {%- render 'icon-user' -%}
-    </div>
-  {%- endif -%}
-
-  <h3 class="cta__heading">
+  <div class="cta__icon">
     {%- if customer -%}
-      {{ customer.first_name }}
+      <span>
+        {%- render 'icon-user-initials', first: 'C', last: 'S' -%}
+      </span>
     {%- else -%}
-      {%- if heading -%}
-        {{ heading }}
-      {%- else -%}
-        heading
-      {%- endif -%}
+      <span>
+        {%- render 'icon-user' -%}
+      </span>
     {%- endif -%}
-  </h3>
+
+    <h3 class="cta__heading">
+      {%- if customer -%}
+        {{ customer.first_name }}
+      {%- else -%}
+        {%- if heading -%}
+          {{ heading }}
+        {%- else -%}
+          heading
+        {%- endif -%}
+      {%- endif -%}
+    </h3>
+  </div>
   <div class="cta__action-text">
     {%- if customer -%}
       {{ action_text_login }}

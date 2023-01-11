@@ -118,14 +118,6 @@
   }
 }
 
-/* for extra small screens */
-@media (max-width: 450px) {
-  .header__logo--wrapper {
-    min-width: 40px;
-    width: 40px;
-    overflow: hidden;
-  }
-}
 /* for small screens */
 @media (max-width: 768px) {
   .header__logo--wrapper {
@@ -167,5 +159,14 @@
   .header__bottom-nav__login,
   .header__bottom-nav__menu {
     display: none;
+  }
+}
+
+/* for extra small screens */
+@media (max-width: 495px) {
+  .header__logo--wrapper {
+    min-width: 40px;
+    width: 40px;
+    overflow: hidden;
   }
 }
