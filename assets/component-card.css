@@ -6,6 +6,8 @@
   border: 1px solid #d8d8d8;
 }
 
+/* collection card */
+
 .card--collection > .card__inner {
   display: flex;
   flex-direction: column;
@@ -40,4 +42,25 @@
   position: absolute;
   transform: translateY(-50%);
   top: 50%;
+}
+
+/* spotlight card */
+
+.spotlight__price {
+  font-weight: bolder;
+}
+
+.spotlight__badge {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+
+.spotlight__content {
+  position: relative;
+  padding: 0px 10px 20px 10px;
+}
+
+.spotlight__media img {
+  height: 180px;
 }

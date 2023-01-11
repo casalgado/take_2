@@ -8,6 +8,7 @@
 # Possible Features
 
 - make search work as in dawn
+- add "click to slide" function to pagination buttons in slider
 
 # Possible Code Improvements
 

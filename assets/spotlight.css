@@ -1,5 +1,27 @@
-.spotlight__wrapper {
+:root {
+  --spotlight-height: 535px;
+}
+
+.spotlight--wrapper {
   display: grid;
   grid-template-columns: 3fr 2fr;
   gap: 40px;
+}
+
+.spotlight__cards--wrapper {
+  display: grid;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
+}
+
+@media (max-width: 768px) {
+  .spotlight--wrapper {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 1024px) {
+  .spotlight__cards--wrapper {
+    grid-template-columns: 1fr;
+  }
 }

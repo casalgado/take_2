@@ -74,7 +74,7 @@
   width: calc((100% - 3 * var(--collection-slider-li-padding)) / 4);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .collection-slider > li {
     width: calc((100% - 1 * var(--collection-slider-li-padding)) / 2);
   }
@@ -90,6 +90,16 @@
   position: relative;
   width: 100%;
   padding-bottom: 72%;
+}
+
+@media (min-width: 768px) {
+  .spotlight-slider > li {
+    height: var(--spotlight-height);
+  }
+
+  .spotlight-slider__media {
+    height: var(--spotlight-height);
+  }
 }
 
 .spotlight-slider__media > img {

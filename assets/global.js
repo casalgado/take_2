@@ -56,6 +56,11 @@ class SliderComponent extends HTMLElement {
       this.prevButton.removeAttribute("disabled");
     }
 
+    console.log(
+      this.isSlideVisible(
+        this.sliderItemsToShow[this.sliderItemsToShow.length - 1]
+      )
+    );
     if (
       this.isSlideVisible(
         this.sliderItemsToShow[this.sliderItemsToShow.length - 1]
@@ -72,7 +77,7 @@ class SliderComponent extends HTMLElement {
       this.slider.clientWidth + this.slider.scrollLeft - offset + 1;
     return (
       element.offsetLeft + element.clientWidth <= lastVisibleSlide &&
-      element.offsetLeft >= this.slider.scrollLeft
+      element.offsetLeft >= this.slider.scrollLeft - 1
     );
   }
 
@@ -88,14 +93,29 @@ class SliderComponent extends HTMLElement {
       left: this.slideScrollPosition,
     });
 
+    // debug
+    // console.log("START");
+    // console.log("client-width", this.slider.clientWidth);
+    // console.log("item-offset", this.sliderItemOffset);
+
     // set active pagination buttons
     let activePaginationButton = 0;
     for (let i = 0; i < numberOfItems; i++) {
-      if (this.slideScrollPosition <= this.sliderItemOffset * i) {
+      let scrollPosition = Math.floor(this.slideScrollPosition);
+
+      // console.log("scroll-position", scrollPosition);
+      // console.log("calc", this.sliderItemOffset * i);
+      // console.log("-------");
+      if (scrollPosition <= this.sliderItemOffset * i) {
         activePaginationButton = i;
         break;
       }
+      activePaginationButton = i;
     }
+
+    // console.log(" ");
+    // console.log("active-button", activePaginationButton);
+
     if (this.paginationButtons.length > 0) {
       for (let i = 0; i < this.paginationButtons.length; i++) {
         const paginationButton = this.paginationButtons[i];

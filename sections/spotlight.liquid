@@ -1,12 +1,12 @@
-{{ 'snippet-spotlight-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'spotlight.css' | asset_url | stylesheet_tag }}
+{{ 'component-card.css' | asset_url | stylesheet_tag }}
 
 {% assign slide-blocks = section.blocks | where: 'type', 'slide' %}
 {% assign prod-blocks = section.blocks | where: 'type', 'product-spotlight' %}
 
 <section>
-  <div class="spotlight__wrapper">
+  <div class="spotlight--wrapper">
     <slider-component class="">
       <div class="slider-component--container">
         <button
@@ -69,7 +69,7 @@
     </slider-component>
     <aside class="spotlight__cards--wrapper">
       {%- for block in prod-blocks -%}
-        {% render 'spotlight-card', card_product: block.settings.product, show_rating: true, show_vendor: true %}
+        {% render 'card-spotlight', card_product: block.settings.product, show_rating: true, show_vendor: true %}
       {%- endfor -%}
     </aside>
   </div>

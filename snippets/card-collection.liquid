@@ -28,16 +28,14 @@
       {% endif %}
       class="card__inner"
     >
-      <div>
-        <div
-          class="card--collection__media card--collection__ratio"
-          style="--ratio-percent: {{ ratio | times: 100 }}%;"
+      <div
+        class="card--collection__media card--collection__ratio"
+        style="--ratio-percent: {{ ratio | times: 100 }}%;"
+      >
+        <img
+          src="  {%- if card_collection.featured_image -%}{{ card_collection.featured_image | image_url }} {%- else -%} {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
+          loading="lazy"
         >
-          <img
-            src="  {%- if card_collection.featured_image -%}{{ card_collection.featured_image | image_url }} {%- else -%} {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
-            loading="lazy"
-          >
-        </div>
       </div>
 
       <div class="card__content">
