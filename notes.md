@@ -9,6 +9,7 @@
 
 - make search work as in dawn
 - add "click to slide" function to pagination buttons in slider
+- add product ratings to spotlight cards
 
 # Possible Code Improvements
 

@@ -5,6 +5,7 @@
 .spotlight--wrapper {
   display: grid;
   grid-template-columns: 3fr 2fr;
+  align-items: center;
   gap: 40px;
 }
 
@@ -12,6 +13,14 @@
   display: grid;
   gap: 20px;
   grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  align-items: stretch;
+}
+
+@media (min-width: 768px) {
+  .spotlight__cards--wrapper {
+    height: var(--spotlight-height);
+  }
 }
 
 @media (max-width: 768px) {

@@ -1,6 +1,7 @@
 {{ 'component-slider.css' | asset_url | stylesheet_tag }}
 {{ 'spotlight.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
+{{ 'component-price.css' | asset_url | stylesheet_tag }}
 
 {% assign slide-blocks = section.blocks | where: 'type', 'slide' %}
 {% assign prod-blocks = section.blocks | where: 'type', 'product-spotlight' %}
@@ -69,7 +70,20 @@
     </slider-component>
     <aside class="spotlight__cards--wrapper">
       {%- for block in prod-blocks -%}
-        {% render 'card-spotlight', card_product: block.settings.product, show_rating: true, show_vendor: true %}
+        {%- liquid
+          if forloop.index > 2
+            assign hide_class = 'hide-sm'
+          else
+            assign hide_class = 'none'
+          endif
+        -%}
+        {%
+          render 'card-spotlight',
+          wrapper_class: {{hide_class}},
+          card_product: block.settings.product,
+          show_rating: true,
+          show_vendor: true
+        %}
       {%- endfor -%}
     </aside>
   </div>

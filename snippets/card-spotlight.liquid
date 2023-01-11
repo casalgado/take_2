@@ -23,173 +23,102 @@
 
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-{%- if card_product and card_product != empty -%}
+<div
+  class="card {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% endif %}"
+>
   <div
-    class="card-wrapper spotlight-card-wrapper {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% endif %}"
+    class="card--spotlight"
   >
-    <div
-      class="
-        card
-        card--spotlight
-      "
+    <a
+      class="spotlight__media"
+      href="{{ card_product.url }}"
+      id="CardLink-{{ section_id }}-{{ card_product.id }}"
+      class="full-unstyled-link"
+      aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
     >
-      <div class="spotlight__media">
-        {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-        <img
-          src="{{ card_product.featured_media | image_url }}"
-          alt="{{ card_product.featured_media.alt | escape }}"
-          class="motion-reduce"
+      {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+      <img
+        src="{{ card_product.featured_media | image_url }}"
+        alt="{{ card_product.featured_media.alt | escape }}"
+        class="motion-reduce"
+      >
+      {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+    </a>
+    <div class="spotlight__content">
+      <div class="card__information">
+        {%- if show_vendor -%}
+          <div class="vendor-styles">{{ card_product.vendor }}</div>
+        {%- endif -%}
+        <h3
+          class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
         >
-        {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
-      </div>
-      <div class="spotlight__content">
-        <div class="card__information">
-          {%- if show_vendor -%}
-            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-          {%- endif -%}
-          <h3
-            class="card__heading{% if card_product.featured_media or settings.card_style == 'standard' %} h5{% endif %}"
+          <a
+            href="{{ card_product.url }}"
+            id="CardLink-{{ section_id }}-{{ card_product.id }}"
+            class="full-unstyled-link"
+            aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
           >
-            <a
-              href="{{ card_product.url }}"
-              id="CardLink-{{ section_id }}-{{ card_product.id }}"
-              class="full-unstyled-link"
-              aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}"
-            >
-              {{ card_product.title | escape }}
-            </a>
-          </h3>
+            {{ card_product.title | escape }}
+          </a>
+        </h3>
 
-          <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-          {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-            {% liquid
-              assign rating_decimal = 0
-              assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-              if decimal >= 0.3 and decimal <= 0.7
-                assign rating_decimal = 0.5
-              elsif decimal > 0.7
-                assign rating_decimal = 1
-              endif
-            %}
-            <div
-              class="rating"
-              role="img"
-              aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
-            >
-              <span
-                aria-hidden="true"
-                class="rating-star color-icon-{{ settings.accent_icons }}"
-                style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-              ></span>
-            </div>
-            <p class="rating-text caption">
-              <span aria-hidden="true">
-                {{- card_product.metafields.reviews.rating.value }} /
-                {{ card_product.metafields.reviews.rating.value.scale_max -}}
-              </span>
-            </p>
-            <p class="rating-count caption">
-              <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
-              <span class="visually-hidden">
-                {{- card_product.metafields.reviews.rating_count }}
-                {{ 'accessibility.total_reviews' | t -}}
-              </span>
-            </p>
-          {%- endif -%}
-
-          {% render 'price', product: card_product, price_class: 'spotlight__price' %}
-        </div>
-        <div class="card__badge spotlight__badge">
-          {%- if card_product.available == false -%}
+        {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
+          {% liquid
+            assign rating_decimal = 0
+            assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
+            if decimal >= 0.3 and decimal <= 0.7
+              assign rating_decimal = 0.5
+            elsif decimal > 0.7
+              assign rating_decimal = 1
+            endif
+          %}
+          <div
+            class="rating"
+            role="img"
+            aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
+          >
             <span
-              id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
-            >
-              {{- 'products.product.sold_out' | t -}}
+              aria-hidden="true"
+              class="rating-star color-icon-{{ settings.accent_icons }}"
+              style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
+            ></span>
+          </div>
+          <p class="rating-text caption">
+            <span aria-hidden="true">
+              {{- card_product.metafields.reviews.rating.value }} /
+              {{ card_product.metafields.reviews.rating.value.scale_max -}}
             </span>
-          {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-            <span
-              id="Badge-{{ section_id }}-{{ card_product.id }}"
-              class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
-            >
-              {{- 'products.product.on_sale' | t -}}
+          </p>
+          <p class="rating-count caption">
+            <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
+            <span class="visually-hidden">
+              {{- card_product.metafields.reviews.rating_count }}
+              {{ 'accessibility.total_reviews' | t -}}
             </span>
-          {%- endif -%}
-        </div>
+          </p>
+        {%- endif -%}
+
+        {% render 'price', product: card_product, price_class: 'spotlight__price' %}
       </div>
     </div>
-  </div>
-
-{%- else -%}
-  <div
-    class="card-wrapper spotlight-card-wrapper {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% endif %}"
-  >
-    <div
-      class="
-        card
-        card--spotlight
-      "
-    >
-      <div class="spotlight__media">
-        {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-
-        {% comment %}theme-check-enable ImgLazyLoading{% endcomment %}
+    {%- if card_product.available == false -%}
+      <div class="card__badge spotlight__badge">
+        <span
+          id="Badge-{{ section_id }}-{{ card_product.id }}"
+          class="badge badge--bottom-left color-{{ settings.sold_out_badge_color_scheme }}"
+        >
+          {{- 'products.product.sold_out' | t -}}
+        </span>
       </div>
-      <div class="spotlight__content">
-        <div class="card__information">
-          {%- if show_vendor -%}
-            <span class="visually-hidden">{{ 'accessibility.vendor' | t }}</span>
-            <div class="caption-with-letter-spacing light">{{ card_product.vendor }}</div>
-          {%- endif -%}
-          <h3 class="card__heading{% if settings.card_style == 'standard' %} h5{% endif %}">
-            <a role="link" aria-disabled="true" class="full-unstyled-link">
-              {{ 'onboarding.product_title' | t }}
-            </a>
-          </h3>
-
-          <span class="caption-large light">{{ block.settings.description | escape }}</span>
-
-          {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
-            {% liquid
-              assign rating_decimal = 0
-              assign decimal = card_product.metafields.reviews.rating.value.rating | modulo: 1
-              if decimal >= 0.3 and decimal <= 0.7
-                assign rating_decimal = 0.5
-              elsif decimal > 0.7
-                assign rating_decimal = 1
-              endif
-            %}
-            <div
-              class="rating"
-              role="img"
-              aria-label="{{ 'accessibility.star_reviews_info' | t: rating_value: card_product.metafields.reviews.rating.value, rating_max: card_product.metafields.reviews.rating.value.scale_max }}"
-            >
-              <span
-                aria-hidden="true"
-                class="rating-star color-icon-{{ settings.accent_icons }}"
-                style="--rating: {{ card_product.metafields.reviews.rating.value.rating | floor }}; --rating-max: {{ card_product.metafields.reviews.rating.value.scale_max }}; --rating-decimal: {{ rating_decimal }};"
-              ></span>
-            </div>
-            <p class="rating-text caption">
-              <span aria-hidden="true">
-                {{- card_product.metafields.reviews.rating.value }} /
-                {{ card_product.metafields.reviews.rating.value.scale_max -}}
-              </span>
-            </p>
-            <p class="rating-count caption">
-              <span aria-hidden="true">({{ card_product.metafields.reviews.rating_count }})</span>
-              <span class="visually-hidden">
-                {{- card_product.metafields.reviews.rating_count }}
-                {{ 'accessibility.total_reviews' | t -}}
-              </span>
-            </p>
-          {%- endif -%}
-
-          {% render 'price' %}
-        </div>
+    {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
+      <div class="card__badge spotlight__badge">
+        <span
+          id="Badge-{{ section_id }}-{{ card_product.id }}"
+          class="badge badge--bottom-left color-{{ settings.sale_badge_color_scheme }}"
+        >
+          {{- 'products.product.on_sale' | t -}}
+        </span>
       </div>
-    </div>
+    {%- endif -%}
   </div>
-{%- endif -%}
+</div>

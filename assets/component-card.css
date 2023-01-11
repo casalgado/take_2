@@ -6,6 +6,22 @@
   border: 1px solid #d8d8d8;
 }
 
+/* badges */
+
+.card__badge {
+  background-color: black;
+  color: white;
+  border-radius: 99px;
+  padding: 5px 10px 5px 10px;
+  font-size: 0.8em;
+}
+
+.spotlight__badge {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+}
+
 /* collection card */
 
 .card--collection > .card__inner {
@@ -46,21 +62,19 @@
 
 /* spotlight card */
 
-.spotlight__price {
-  font-weight: bolder;
+.card--spotlight {
+  position: relative;
 }
 
-.spotlight__badge {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
+.spotlight__media img {
+  height: 117px;
+}
+
+.spotlight__price {
+  font-weight: bolder;
 }
 
 .spotlight__content {
   position: relative;
   padding: 0px 10px 20px 10px;
-}
-
-.spotlight__media img {
-  height: 180px;
 }
