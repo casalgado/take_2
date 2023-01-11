@@ -26,6 +26,7 @@
 @media (max-width: 768px) {
   .spotlight--wrapper {
     grid-template-columns: 1fr;
+    gap: 5px;
   }
 }
 

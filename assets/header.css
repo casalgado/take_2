@@ -17,6 +17,9 @@
   margin-bottom: 22px;
   height: 50px;
   gap: 20px;
+  padding-right: 10px;
+  padding-left: 10px;
+  overflow: hidden;
 }
 
 #header__logo {
@@ -116,12 +119,19 @@
   }
 }
 
+/* for extra small screens */
+@media (max-width: 550px) {
+  .header__logo--wrapper {
+    min-width: 40px;
+    width: 40px;
+    overflow: hidden;
+  }
+}
 /* for small screens */
 @media (max-width: 768px) {
   .header__logo--wrapper {
     order: 0;
     margin-right: auto;
-    width: 140px;
   }
 
   #header__logo {
