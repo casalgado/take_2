@@ -1,0 +1,67 @@
+<section class="">
+  <div class="collection-banner--wrapper"></div>
+</section>
+
+{% schema %}
+{
+  "name": "Collection Banner",
+  "class": "section",
+  "tag": "section",
+  "max_blocks": 2,
+  "settings": [],
+  "blocks": [
+    {
+      "type": "banner",
+      "name": "banner",
+      {
+        "type": "color",
+        "id": "color_scheme",
+        "label": "Color Scheme",
+        "default": "#D14D41"
+      },
+      {
+        "type": "collection",
+        "id": "collection",
+        "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+      },
+      {
+        "type": "text",
+        "id": "intro",
+        "default": "Introduccion",
+        "label": "Introduccion"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "default": "Titulo",
+        "label": "Titulo"
+      },
+      {
+        "type": "text",
+        "id": "button",
+        "default": "Boton",
+        "label": "Boton"
+      }
+    }
+  ],
+
+  "presets": [
+    {
+      "name": "Collection Banner",
+      "blocks": [
+        {
+          "type": "banner"
+        },
+        {
+          "type": "banner"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
