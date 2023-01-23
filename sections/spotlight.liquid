@@ -6,88 +6,86 @@
 {% assign slide-blocks = section.blocks | where: 'type', 'slide' %}
 {% assign prod-blocks = section.blocks | where: 'type', 'product-spotlight' %}
 
-<section>
-  <div class="spotlight--wrapper">
-    <slider-component class="">
-      <div class="slider-component--container">
-        <button
-          type="button"
-          class="slider-button slider-button--prev"
-          name="previous"
-          aria-label="{{ 'general.slider.previous_slide' | t }}"
-          data-step="{{section.settings.step}}"
-        >
-          {% render 'icon-caret' %}
-        </button>
+<div class="spotlight--wrapper">
+  <slider-component class="">
+    <div class="slider-component--container">
+      <button
+        type="button"
+        class="slider-button slider-button--prev"
+        name="previous"
+        aria-label="{{ 'general.slider.previous_slide' | t }}"
+        data-step="{{section.settings.step}}"
+      >
+        {% render 'icon-caret' %}
+      </button>
 
-        <button
-          type="button"
-          class="slider-button slider-button--next"
-          name="next"
-          aria-label="{{ 'general.slider.next_slide' | t }}"
-          data-step="{{section.settings.step}}"
-        >
-          {% render 'icon-caret' %}
-        </button>
+      <button
+        type="button"
+        class="slider-button slider-button--next"
+        name="next"
+        aria-label="{{ 'general.slider.next_slide' | t }}"
+        data-step="{{section.settings.step}}"
+      >
+        {% render 'icon-caret' %}
+      </button>
 
-        <ul
-          class="slider-component spotlight-slider"
-          id="Slider-{{ section.id }}"
-          role="list"
-        >
-          {%- for block in slide-blocks -%}
-            <li
-              id="Slide-{{ section.id }}-{{ forloop.index }}"
-              class="slider__slide"
-              {{ block.shopify_attributes }}
-            >
-              <div class="spotlight-slider__media">
-                <img
-                  src="{%- if block.settings.image -%}{{ block.settings.image | image_url }} {%- else -%}  {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
-                >
-              </div>
-            </li>
-          {%- endfor -%}
-        </ul>
+      <ul
+        class="slider-component spotlight-slider"
+        id="Slider-{{ section.id }}"
+        role="list"
+      >
+        {%- for block in slide-blocks -%}
+          <li
+            id="Slide-{{ section.id }}-{{ forloop.index }}"
+            class="slider__slide"
+            {{ block.shopify_attributes }}
+          >
+            <div class="spotlight-slider__media">
+              <img
+                src="{%- if block.settings.image -%}{{ block.settings.image | image_url }} {%- else -%}  {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
+              >
+            </div>
+          </li>
+        {%- endfor -%}
+      </ul>
 
-        <ul
-          class="slider-pagination"
-        >
-          {%- for block in slide-blocks -%}
-            <li>
-              <button
-                id="slider-pagination__button--index{{ forloop.index0 }}"
-                class="slider-pagination__button"
-                type="button"
-                aria-current="true"
-                aria-controls=""
-                aria-label="Showing Slide {{ forloop.index }}"
-              ></button>
-            </li>
-          {%- endfor -%}
-        </ul>
-      </div>
-    </slider-component>
-    <aside class="spotlight__cards--wrapper">
-      {%- for block in prod-blocks -%}
-        {%- liquid
-          if forloop.index > 2
-            assign hide_class = 'hide-sm'
-          else
-            assign hide_class = 'none'
-          endif
-        -%}
-        {%
-          render 'card-spotlight',
-          wrapper_class: {{hide_class}},
-          card_product: block.settings.product,
-          show_rating: true,
-          show_vendor: true
-        %}
-      {%- endfor -%}
-    </aside>
-  </div>
-</section>
+      <ul
+        class="slider-pagination"
+      >
+        {%- for block in slide-blocks -%}
+          <li>
+            <button
+              id="slider-pagination__button--index{{ forloop.index0 }}"
+              class="slider-pagination__button"
+              type="button"
+              aria-current="true"
+              aria-controls=""
+              aria-label="Showing Slide {{ forloop.index }}"
+            ></button>
+          </li>
+        {%- endfor -%}
+      </ul>
+    </div>
+  </slider-component>
+  <aside class="spotlight__cards--wrapper">
+    {%- for block in prod-blocks -%}
+      {%- liquid
+        if forloop.index > 2
+          assign hide_class = 'hide-sm'
+        else
+          assign hide_class = 'none'
+        endif
+      -%}
+      {%
+        render 'card-spotlight',
+        wrapper_class: {{hide_class}},
+        card_product: block.settings.product,
+        show_rating: true,
+        show_vendor: true
+      %}
+    {%- endfor -%}
+  </aside>
+</div>
 
 {% schema %}
 {

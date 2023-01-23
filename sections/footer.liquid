@@ -1,0 +1,60 @@
+{{ 'footer.css' | asset_url | stylesheet_tag }}
+
+<div class="footer--wrapper">
+  <footer class="footer">
+    <div class="footer__nav">
+      <a href="/" itemprop="url" class="footer__logo--wrapper">
+        <img
+          src="{{ "graylogo.svg" | asset_url }}"
+          alt="{{ shop.name }}"
+          id="footer__logo"
+          itemprop="logo"
+        >
+      </a>
+      <div class="footer__menu menu-custom">
+        {% for link in linklists['main-menu'].links %}
+          {% assign child_list_handle = link.title | handleize %}
+          {% if linklists[child_list_handle].links != blank %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+            [
+            {%- for childlink in linklists[child_list_handle].links %}
+              <a href="{{ childlink.url }}">{{ childlink.title | escape }}</a>
+            {% endfor -%}
+            ]
+          {% else %}
+            <a href="{{ link.url }}">{{ link.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </div>
+      <div class="footer__socials">
+        <ul class="footer__socials--list" role="list">
+          {%- if settings.social_facebook_link != blank -%}
+            <li class="list-social__item">
+              <a href="{{ settings.social_facebook_link }}" class="list-social__link">
+                {%- render 'icon-facebook' -%}
+                <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+          {%- if settings.social_twitter_link != blank -%}
+            <li class="list-social__item">
+              <a href="{{ settings.social_twitter_link }}" class="list-social__link">
+                {%- render 'icon-twitter' -%}
+                <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+
+          {%- if settings.social_instagram_link != blank -%}
+            <li class="list-social__item">
+              <a href="{{ settings.social_instagram_link }}" class="list-social__link">
+                {%- render 'icon-instagram' -%}
+                <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
+              </a>
+            </li>
+          {%- endif -%}
+        </ul>
+      </div>
+    </div>
+  </footer>
+</div>

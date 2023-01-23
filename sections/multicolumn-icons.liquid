@@ -10,32 +10,31 @@
   }
 {%- endstyle -%}
 
-<section class="">
-  <div class="multicolumn-icons--wrapper">
-    <div class="multicolumn-icons__background"></div>
-    <div class="multicolumn-icons__content">
-      {%- for block in section.blocks -%}
-        <div class="multicolumn-icons__column">
-          <div class="multicolumn-icons__image-wrapper">
-            {%- if block.settings.image %}
-              <img
-                src="{{ block.settings.image | image_url }}"
-                alt="{{ block.settings.image | escape }}"
-                class="motion-reduce"
-              >
-            {%- else -%}
-              {% render 'icon-error' %}
-            {%- endif -%}
-          </div>
-          <h4 class="multicolumn-icons__title">{{ block.settings.title }}</h4>
-          <a class="multicolumn-icons__link" href="{{ block.settings.link }}">
-            {{- block.settings.link_label | escape -}}
-          </a>
+<div class="multicolumn-icons--wrapper">
+  <div class="multicolumn-icons__background"></div>
+  <div class="multicolumn-icons__content">
+    {%- for block in section.blocks -%}
+      <div class="multicolumn-icons__column">
+        <div class="multicolumn-icons__image-wrapper">
+          {%- if block.settings.image %}
+            <img
+              src="{{ block.settings.image | image_url }}"
+              alt="{{ block.settings.image | escape }}"
+              class="motion-reduce"
+            >
+          {%- else -%}
+            {% render 'icon-error' %}
+          {%- endif -%}
         </div>
-      {%- endfor %}
-    </div>
+        <h4 class="multicolumn-icons__title">{{ block.settings.title }}</h4>
+        <a class="multicolumn-icons__link" href="{{ block.settings.link }}">
+          {{- block.settings.link_label | escape -}}
+        </a>
+      </div>
+    {%- endfor %}
   </div>
-</section>
+</div>
+
 {% schema %}
 {
   "name": "Icons",

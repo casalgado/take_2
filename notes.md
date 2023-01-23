@@ -20,3 +20,4 @@
 - favicon
 - heading font weight and size styles
 - optimize css in section-collection-banner.css
+- make sure everything is in the correct language

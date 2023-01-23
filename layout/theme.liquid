@@ -80,7 +80,7 @@
 
       /* all breakpoint pixel values used across site*/
 
-      @media (min-width: 495px) {
+      @media screen and (min-width: 495px) {
       }
 
       @media screen and (min-width: 768px) {
@@ -114,5 +114,7 @@
     <main role="main">
       {{ content_for_layout }}
     </main>
+
+    {% section 'footer' %}
   </body>
 </html>
