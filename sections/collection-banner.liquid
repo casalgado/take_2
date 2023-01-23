@@ -1,5 +1,50 @@
-<section class="">
-  <div class="collection-banner--wrapper"></div>
+{{ 'section-collection-banner.css' | asset_url | stylesheet_tag }}
+{{ 'ellipses-overlay.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+{%- endstyle -%}
+
+<section>
+  <div class="collection-banner--wrapper">
+    {%- for block in section.blocks -%}
+      <div
+        class="collection-banner__column"
+        style="background: linear-gradient(180deg, {{block.settings.color_top}} 0%, {{block.settings.color_bottom}});"
+      >
+        <div class="collection-banner__column--content">
+          <h4 class="collection-banner__intro">{{ block.settings.intro }}</h4>
+          <h4 class="collection-banner__title">{{ block.settings.title }}</h4>
+          <button class="collection-banner__button">
+            {{- block.settings.button_text -}}
+            {%- if block.settings.button_icon -%}
+              <div class="collection-banner__button__icon--wrapper">{% render 'icon-arrow-bold' %}</div>
+            {%- endif -%}
+          </button>
+        </div>
+        <div class="collection-banner__column--media">
+          <img
+            class="{{block.settings.img_layout}}"
+            src="{%- if block.settings.image -%}{{ block.settings.image | image_url }} {%- else -%}  {{ " c-placeholder.png" | asset_url }} {%- endif -%}"
+          >
+        </div>
+        <div class="ellipses-overlay">
+          <div id="e01" class="overlay__ellipse"></div>
+          <div id="e02" class="overlay__ellipse"></div>
+          <div id="e03" class="overlay__ellipse"></div>
+          <div id="e04" class="overlay__ellipse"></div>
+          <div id="e05" class="overlay__ellipse"></div>
+          <div id="e06" class="overlay__ellipse"></div>
+          <div id="e07" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e08" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e09" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e10" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e11" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e12" class="overlay__ellipse overlay--stroke"></div>
+          <div id="e13" class="overlay__ellipse overlay--stroke"></div>
+        </div>
+      </div>
+    {%- endfor %}
+  </div>
 </section>
 
 {% schema %}
@@ -11,42 +56,73 @@
   "settings": [],
   "blocks": [
     {
-      "type": "banner",
-      "name": "banner",
-      {
-        "type": "color",
-        "id": "color_scheme",
-        "label": "Color Scheme",
-        "default": "#D14D41"
-      },
-      {
-        "type": "collection",
-        "id": "collection",
-        "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
-      },
-      {
-        "type": "image_picker",
-        "id": "image",
-        "label": "t:sections.multicolumn.blocks.column.settings.image.label"
-      },
-      {
-        "type": "text",
-        "id": "intro",
-        "default": "Introduccion",
-        "label": "Introduccion"
-      },
-      {
-        "type": "text",
-        "id": "title",
-        "default": "Titulo",
-        "label": "Titulo"
-      },
-      {
-        "type": "text",
-        "id": "button",
-        "default": "Boton",
-        "label": "Boton"
-      }
+      "type": "Banner",
+      "name": "Banner",
+      "settings": [
+        {
+          "type": "color",
+          "id": "color_top",
+          "label": "Color Arriba",
+          "default": "#0CEACF"
+        },
+        {
+          "type": "color",
+          "id": "color_bottom",
+          "label": "Color Abajo",
+          "default": "#0BA18F"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "t:sections.collection-list.blocks.featured_collection.settings.collection.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "select",
+          "id": "img_layout",
+          "options": [
+            {
+              "value": "full-height",
+              "label": "full height"
+            },
+            {
+              "value": "full-width",
+              "label": "full width"
+            }
+          ],
+          "default": "full-height",
+          "label": "Image Layout"
+        },
+
+        {
+          "type": "text",
+          "id": "intro",
+          "default": "Introducción",
+          "label": "Introducción"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "default": "Título",
+          "label": "Título"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "default": "Boton",
+          "label": "Boton"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_icon",
+          "default": false,
+          "label": "Incluir icono en Botón"
+        }
+      ]
     }
   ],
 
@@ -55,10 +131,10 @@
       "name": "Collection Banner",
       "blocks": [
         {
-          "type": "banner"
+          "type": "Banner"
         },
         {
-          "type": "banner"
+          "type": "Banner"
         }
       ]
     }

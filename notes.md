@@ -19,3 +19,4 @@
 
 - favicon
 - heading font weight and size styles
+- optimize css in section-collection-banner.css

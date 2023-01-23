@@ -3,5 +3,6 @@
     "collection_slider": {
       "type": "collection-slider"
     }
-  }
+  },
+  "order": ["collection_slider"]
 }
