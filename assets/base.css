@@ -41,22 +41,27 @@ h1,
 h2,
 h3,
 h4,
-h5,
-.h0,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5 {
+h5 {
   font-family: var(--font-heading-family);
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   margin: 0px;
 }
 
-h3,
-.h3 {
+h4 {
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 30px;
+}
+
+h3 {
   font-size: 16px;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 28px;
 }
 
 .vendor-styles {

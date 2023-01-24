@@ -1,8 +1,180 @@
 {
   "sections": {
-    "collection_slider": {
-      "type": "collection-slider"
+    "346993c9-20ff-46e1-9d7a-e6cf9c7b4a16": {
+      "type": "spotlight",
+      "blocks": {
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Rectangle_457.png"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-1": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/small-business-interior.jpg"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-2": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/black-and-blue-clothing-on-a-rack-in-a-sunlit-shop.jpg"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-3": {
+          "type": "product-spotlight",
+          "settings": {
+            "product": "aire-acondicionado-12-000-btu"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-4": {
+          "type": "product-spotlight",
+          "settings": {
+            "product": "adaptador-de-corriente-de-3-pines"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-5": {
+          "type": "product-spotlight",
+          "settings": {
+            "product": "olla-freidora-air-fryer-de-2-litros"
+          }
+        },
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-6": {
+          "type": "product-spotlight",
+          "settings": {
+            "product": "hidrolavadora-electrica-1450-psi-y-1400w"
+          }
+        }
+      },
+      "block_order": [
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-0",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-1",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-2",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-3",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-4",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-5",
+        "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-6"
+      ],
+      "settings": {
+      }
+    },
+    "7922417b-aa5c-404d-a06a-ed86d0b46152": {
+      "type": "collection-slider",
+      "blocks": {
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "refrigeradores"
+          }
+        },
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "piscinas"
+          }
+        },
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "audifonos"
+          }
+        },
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-3": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "lamparas"
+          }
+        },
+        "46328649-6cf9-4b9d-bf9f-d5bf4e527913": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "aires-acondicionados"
+          }
+        },
+        "5a35fcfe-7e11-4cf5-b0a1-af3aa5c876aa": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "electricos"
+          }
+        },
+        "8b3b9191-74e9-4bf1-bbca-4c90a98ee1f6": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "maquinaria-liviana"
+          }
+        },
+        "41ac4d17-b0bd-4cb6-b2d5-ef30071c96e8": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "sillas"
+          }
+        }
+      },
+      "block_order": [
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-0",
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-1",
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-2",
+        "template--17359690727724__7922417b-aa5c-404d-a06a-ed86d0b46152-167458008032dbc0d0-3",
+        "46328649-6cf9-4b9d-bf9f-d5bf4e527913",
+        "5a35fcfe-7e11-4cf5-b0a1-af3aa5c876aa",
+        "8b3b9191-74e9-4bf1-bbca-4c90a98ee1f6",
+        "41ac4d17-b0bd-4cb6-b2d5-ef30071c96e8"
+      ],
+      "settings": {
+        "title": "Categorías para ti",
+        "step": 1
+      }
+    },
+    "dafbad6e-4816-4c0b-9b03-d9ead6d57ce9": {
+      "type": "multicolumn-icons",
+      "blocks": {
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-0": {
+          "type": "icon",
+          "settings": {
+            "title": "Icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-1": {
+          "type": "icon",
+          "settings": {
+            "title": "Icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-2": {
+          "type": "icon",
+          "settings": {
+            "title": "Icon",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-3": {
+          "type": "icon",
+          "settings": {
+            "title": "Icon",
+            "link_label": "",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-0",
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-1",
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-2",
+        "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-3"
+      ],
+      "settings": {
+        "color_scheme": "#D14D41"
+      }
     }
   },
-  "order": ["collection_slider"]
+  "order": [
+    "346993c9-20ff-46e1-9d7a-e6cf9c7b4a16",
+    "7922417b-aa5c-404d-a06a-ed86d0b46152",
+    "dafbad6e-4816-4c0b-9b03-d9ead6d57ce9"
+  ]
 }

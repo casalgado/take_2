@@ -13,7 +13,7 @@
       <div class="collection-banner__column--content">
         <h4 class="collection-banner__intro">{{ block.settings.intro }}</h4>
         <h4 class="collection-banner__title">{{ block.settings.title }}</h4>
-        <button class="collection-banner__button">
+        <button class="collection-banner__button" style="top: {{ block.settings.button_height }}%;">
           {{- block.settings.button_text -}}
           {%- if block.settings.button_icon -%}
             <div class="collection-banner__button__icon--wrapper">{% render 'icon-arrow-bold' %}</div>
@@ -111,7 +111,7 @@
         {
           "type": "text",
           "id": "button_text",
-          "default": "Boton",
+          "default": "Texto Botón",
           "label": "Boton"
         },
         {
@@ -119,6 +119,16 @@
           "id": "button_icon",
           "default": false,
           "label": "Incluir icono en Botón"
+        },
+        {
+          "type": "range",
+          "id": "button_height",
+          "min": 60,
+          "max": 80,
+          "step": 1,
+          "unit": "%",
+          "label": "Altura del Boton",
+          "default": 65
         }
       ]
     }

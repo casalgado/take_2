@@ -39,13 +39,13 @@
       </div>
 
       <div class="card__content">
-        <h3 class="card__heading">
+        <h4 class="card__heading">
           {%- if card_collection.title != blank -%}
             {{- card_collection.title | escape -}}
           {%- else -%}
             {{ 'onboarding.collection_title' | t }}
           {%- endif -%}
-        </h3>
+        </h4>
         <div class="card--collection__icon">{% render 'icon-arrow' %}</div>
       </div>
     </a>

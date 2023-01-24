@@ -15,8 +15,6 @@
 }
 
 .collection-banner__column--content {
-  padding-top: 38px;
-  padding-left: 30px;
   position: relative;
 }
 
@@ -49,8 +47,9 @@
 
 .collection-banner__button {
   position: absolute;
-  top: 65.56%;
+
   width: 80%;
+  left: 10%;
 
   display: flex;
   flex-direction: row;
