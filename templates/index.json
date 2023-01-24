@@ -131,32 +131,36 @@
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-0": {
           "type": "icon",
           "settings": {
-            "title": "Icon",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/i-shield.png",
+            "title": "Garantía Extendida",
+            "link_label": "Saber más",
+            "link": "shopify:\/\/pages\/contact"
           }
         },
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-1": {
           "type": "icon",
           "settings": {
-            "title": "Icon",
-            "link_label": "",
+            "image": "shopify:\/\/shop_images\/i-points.png",
+            "title": "Analytics Puntos",
+            "link_label": "Saber más",
             "link": ""
           }
         },
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-2": {
           "type": "icon",
           "settings": {
-            "title": "Icon",
-            "link_label": "",
-            "link": ""
+            "image": "shopify:\/\/shop_images\/i-box.png",
+            "title": "Rastrear mi Entrega",
+            "link_label": "Saber más",
+            "link": "shopify:\/\/pages\/contact"
           }
         },
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-3": {
           "type": "icon",
           "settings": {
-            "title": "Icon",
-            "link_label": "",
+            "image": "shopify:\/\/shop_images\/i-employee.png",
+            "title": "Nesecito Ayuda",
+            "link_label": "Saber más",
             "link": ""
           }
         }
@@ -168,13 +172,55 @@
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-3"
       ],
       "settings": {
-        "color_scheme": "#D14D41"
+        "color_scheme": "#d14d41"
+      }
+    },
+    "5f6c3942-7c32-4983-9de7-835485a6ed46": {
+      "type": "collection-banner",
+      "blocks": {
+        "template--17359690727724__5f6c3942-7c32-4983-9de7-835485a6ed46-1674586004f401eccd-0": {
+          "type": "Banner",
+          "settings": {
+            "color_top": "#0CEACF",
+            "color_bottom": "#0BA18F",
+            "collection": "piscinas",
+            "image": "shopify:\/\/shop_images\/i-suelo.png",
+            "img_layout": "full-height",
+            "intro": "Explora nuestra",
+            "title": "Colección de Pisos",
+            "button_text": "Ver colección",
+            "button_icon": false,
+            "button_height": 65
+          }
+        },
+        "template--17359690727724__5f6c3942-7c32-4983-9de7-835485a6ed46-1674586004f401eccd-1": {
+          "type": "Banner",
+          "settings": {
+            "color_top": "#f7cb20",
+            "color_bottom": "#f8a904",
+            "collection": "lamparas",
+            "image": "shopify:\/\/shop_images\/i-pintura.png",
+            "img_layout": "full-width",
+            "intro": "Nuevos productos",
+            "title": "Pinturas para  ti",
+            "button_text": "Ir a pinturas",
+            "button_icon": true,
+            "button_height": 73
+          }
+        }
+      },
+      "block_order": [
+        "template--17359690727724__5f6c3942-7c32-4983-9de7-835485a6ed46-1674586004f401eccd-0",
+        "template--17359690727724__5f6c3942-7c32-4983-9de7-835485a6ed46-1674586004f401eccd-1"
+      ],
+      "settings": {
       }
     }
   },
   "order": [
     "346993c9-20ff-46e1-9d7a-e6cf9c7b4a16",
     "7922417b-aa5c-404d-a06a-ed86d0b46152",
-    "dafbad6e-4816-4c0b-9b03-d9ead6d57ce9"
+    "dafbad6e-4816-4c0b-9b03-d9ead6d57ce9",
+    "5f6c3942-7c32-4983-9de7-835485a6ed46"
   ]
 }

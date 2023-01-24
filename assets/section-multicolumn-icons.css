@@ -71,10 +71,6 @@
   .multicolumn-icons__content {
     grid-template-columns: 1fr 1fr;
   }
-
-  .multicolumn-icons__image-wrapper {
-    width: 70px;
-  }
 }
 
 @media screen and (max-width: 495px) {

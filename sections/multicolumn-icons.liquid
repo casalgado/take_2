@@ -2,11 +2,7 @@
 
 {%- style -%}
   .multicolumn-icons__link, .multicolumn-icons__link:link, .multicolumn-icons__link:visited, .multicolumn-icons__link:hover  {
-    color: {{section.settings.color_scheme}};
-  }
-
-  .multicolumn-icons__image-wrapper {
-    background-color: {{section.settings.color_scheme}}20;
+    color: {{section.settings.color_links}};
   }
 {%- endstyle -%}
 
@@ -15,7 +11,10 @@
   <div class="multicolumn-icons__content">
     {%- for block in section.blocks -%}
       <div class="multicolumn-icons__column">
-        <div class="multicolumn-icons__image-wrapper">
+        <div
+          class="multicolumn-icons__image-wrapper"
+          style="background-color: {{section.settings.color_background}}33;"
+        >
           {%- if block.settings.image %}
             <img
               src="{{ block.settings.image | image_url }}"
@@ -43,9 +42,15 @@
   "settings": [
     {
       "type": "color",
-      "id": "color_scheme",
-      "label": "Color Scheme",
+      "id": "color_links",
+      "label": "Color de Enlaces",
       "default": "#D14D41"
+    },
+    {
+      "type": "color",
+      "id": "color_background",
+      "label": "Color de Fondo",
+      "default": "#FFCCB4"
     }
   ],
   "blocks": [
