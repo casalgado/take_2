@@ -21,7 +21,7 @@
   {% render 'spotlight-card', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-{{ 'component-rating.css' | asset_url | stylesheet_tag }}
+{% comment %} {{ 'component-rating.css' | asset_url | stylesheet_tag }} {% endcomment %}
 
 <div
   class="card {% if wrapper_class and wrapper_class != 'none' %}{{ wrapper_class }}{% endif %}"

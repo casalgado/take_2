@@ -14,8 +14,6 @@ class SliderComponent extends HTMLElement {
     if (!this.slider || !this.nextButton) return;
 
     this.initPages();
-    const resizeObserver = new ResizeObserver((entries) => this.initPages());
-    resizeObserver.observe(this.slider);
 
     this.slider.addEventListener("scroll", this.update.bind(this));
     this.prevButton.addEventListener("click", this.onButtonClick.bind(this));
@@ -56,11 +54,6 @@ class SliderComponent extends HTMLElement {
       this.prevButton.removeAttribute("disabled");
     }
 
-    console.log(
-      this.isSlideVisible(
-        this.sliderItemsToShow[this.sliderItemsToShow.length - 1]
-      )
-    );
     if (
       this.isSlideVisible(
         this.sliderItemsToShow[this.sliderItemsToShow.length - 1]
@@ -81,31 +74,13 @@ class SliderComponent extends HTMLElement {
     );
   }
 
-  onButtonClick(event) {
-    event.preventDefault();
+  setActivePaginationButton() {
     const numberOfItems = this.sliderItems.length;
-    const step = event.currentTarget.dataset.step || 1;
-    this.slideScrollPosition =
-      event.currentTarget.name === "next"
-        ? this.slider.scrollLeft + step * this.sliderItemOffset
-        : this.slider.scrollLeft - step * this.sliderItemOffset;
-    this.slider.scrollTo({
-      left: this.slideScrollPosition,
-    });
-
-    // debug
-    // console.log("START");
-    // console.log("client-width", this.slider.clientWidth);
-    // console.log("item-offset", this.sliderItemOffset);
-
-    // set active pagination buttons
+    // first determine which pagination button should be active
     let activePaginationButton = 0;
-    for (let i = 0; i < numberOfItems; i++) {
-      let scrollPosition = Math.floor(this.slideScrollPosition);
+    let scrollPosition = Math.floor(this.slideScrollPosition) || 0;
 
-      // console.log("scroll-position", scrollPosition);
-      // console.log("calc", this.sliderItemOffset * i);
-      // console.log("-------");
+    for (let i = 0; i < numberOfItems; i++) {
       if (scrollPosition <= this.sliderItemOffset * i) {
         activePaginationButton = i;
         break;
@@ -113,9 +88,7 @@ class SliderComponent extends HTMLElement {
       activePaginationButton = i;
     }
 
-    // console.log(" ");
-    // console.log("active-button", activePaginationButton);
-
+    // then set the styles
     if (this.paginationButtons.length > 0) {
       for (let i = 0; i < this.paginationButtons.length; i++) {
         const paginationButton = this.paginationButtons[i];
@@ -126,6 +99,21 @@ class SliderComponent extends HTMLElement {
         }
       }
     }
+  }
+
+  onButtonClick(event) {
+    event.preventDefault();
+
+    const step = event.currentTarget.dataset.step || 1;
+    this.slideScrollPosition =
+      event.currentTarget.name === "next"
+        ? this.slider.scrollLeft + step * this.sliderItemOffset
+        : this.slider.scrollLeft - step * this.sliderItemOffset;
+    this.slider.scrollTo({
+      left: this.slideScrollPosition,
+    });
+
+    this.setActivePaginationButton();
   }
 }
 

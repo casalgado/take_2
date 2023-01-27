@@ -12,13 +12,13 @@
         "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/small-business-interior.jpg"
+            "image": "shopify:\/\/shop_images\/business_interior_1.png"
           }
         },
         "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-2": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/black-and-blue-clothing-on-a-rack-in-a-sunlit-shop.jpg"
+            "image": "shopify:\/\/shop_images\/black_and_blue_1.png"
           }
         },
         "template--17359690727724__346993c9-20ff-46e1-9d7a-e6cf9c7b4a16-167457999299c0d7d9-3": {
@@ -172,7 +172,8 @@
         "template--17359690727724__dafbad6e-4816-4c0b-9b03-d9ead6d57ce9-16745801633daa4830-3"
       ],
       "settings": {
-        "color_scheme": "#d14d41"
+        "color_links": "#d14d41",
+        "color_background": "#ffccb4"
       }
     },
     "5f6c3942-7c32-4983-9de7-835485a6ed46": {
@@ -181,8 +182,8 @@
         "template--17359690727724__5f6c3942-7c32-4983-9de7-835485a6ed46-1674586004f401eccd-0": {
           "type": "Banner",
           "settings": {
-            "color_top": "#0CEACF",
-            "color_bottom": "#0BA18F",
+            "color_top": "#0ceacf",
+            "color_bottom": "#0ba18f",
             "collection": "piscinas",
             "image": "shopify:\/\/shop_images\/i-suelo.png",
             "img_layout": "full-height",

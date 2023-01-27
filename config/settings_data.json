@@ -11,7 +11,23 @@
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_instagram_link": "",
-    "page_width": 1350
+    "favicon": "shopify:\/\/shop_images\/Subtract.png",
+    "page_width": 1350,
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+        }
+      }
+    },
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Default": {
