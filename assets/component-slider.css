@@ -47,6 +47,16 @@
   }
 }
 
+@media (max-width: 1024px) {
+  .slider-button--next {
+    right: -8px;
+  }
+
+  .slider-button--prev {
+    left: -8px;
+  }
+}
+
 .slider-component {
   padding: 0px;
   display: flex;

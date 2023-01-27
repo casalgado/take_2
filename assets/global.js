@@ -11,6 +11,9 @@ class SliderComponent extends HTMLElement {
       ".slider-pagination__button"
     );
 
+    const resizeObserver = new ResizeObserver((entries) => this.initPages());
+    resizeObserver.observe(this.slider);
+
     if (!this.slider || !this.nextButton) return;
 
     this.initPages();
@@ -18,6 +21,8 @@ class SliderComponent extends HTMLElement {
     this.slider.addEventListener("scroll", this.update.bind(this));
     this.prevButton.addEventListener("click", this.onButtonClick.bind(this));
     this.nextButton.addEventListener("click", this.onButtonClick.bind(this));
+    if (this.paginationButtons.length > 0)
+      this.paginationButtons[0].classList.add("is-active");
   }
 
   initPages() {
@@ -33,9 +38,6 @@ class SliderComponent extends HTMLElement {
         this.sliderItemOffset
     );
     this.totalPages = this.sliderItemsToShow.length - this.slidesPerPage + 1;
-
-    if (this.paginationButtons.length > 0)
-      this.paginationButtons[0].classList.add("is-active");
 
     this.update();
   }
@@ -75,10 +77,12 @@ class SliderComponent extends HTMLElement {
   }
 
   setActivePaginationButton() {
+    console.log("sap");
     const numberOfItems = this.sliderItems.length;
     // first determine which pagination button should be active
     let activePaginationButton = 0;
-    let scrollPosition = Math.floor(this.slideScrollPosition) || 0;
+    let scrollPosition = Math.floor(this.slideScrollPosition);
+    console.log(scrollPosition);
 
     for (let i = 0; i < numberOfItems; i++) {
       if (scrollPosition <= this.sliderItemOffset * i) {
